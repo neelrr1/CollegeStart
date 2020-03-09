@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom"
 import Nav from './Nav'
 import Main from './Main'
 import AboutUs from './AboutUs'
@@ -17,8 +17,12 @@ function App(props) {
                 <Route exact path="/subscribe">
                     <Subscribe />
                 </Route>
-                <Route exact path="/">
+                <Route exact path="/home">
                     <Main />
+                </Route>
+                <Route exact path="/">
+                    {/* <Main /> */}
+                    <Redirect exact from="/" to="/subscribe" />
                 </Route>
                 <Route>
                     <h1 style={{ textAlign: 'center' }}>Oops! Looks like this page does not exist.</h1>

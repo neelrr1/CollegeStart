@@ -29,7 +29,7 @@ function Nav() {
     const [open, setOpen] = useState(false)
 
     const pages = ["Home", "About Us", "Subscribe to Our Mailing List"]
-    const routes = ["/", "/about", "/subscribe"]
+    const routes = ["/home", "/about", "/subscribe"]
     const icons = [<HomeIcon />, <InfoIcon />, <EmailIcon />]
 
     const toggleDrawer = (open) => event => {
