@@ -5,6 +5,8 @@ import Main from './Main'
 import AboutUs from './AboutUs'
 import Subscribe from './Subscribe'
 import './App.css';
+import YourSchools from './YourSchools'
+import Mentorship from './Mentorship'
 
 function App(props) {
     return (
@@ -19,6 +21,12 @@ function App(props) {
                 </Route>
                 <Route exact path="/home">
                     <Main />
+                </Route>
+                <Route exact path="/yourschools">
+                    <YourSchools />
+                </Route>
+                <Route exact path="/mentorship">
+                    <Mentorship />
                 </Route>
                 <Route exact path="/">
                     {/* <Main /> */}

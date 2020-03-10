@@ -8,8 +8,12 @@ import MenuIcon from '@material-ui/icons/Menu'
 import HomeIcon from '@material-ui/icons/Home'
 import EmailIcon from '@material-ui/icons/Email'
 import InfoIcon from '@material-ui/icons/Info'
+import SchoolIcon from '@material-ui/icons/School'
+import FlagIcon from '@material-ui/icons/Flag'
+import PersonAddIcon from '@material-ui/icons/PersonAdd'
+import AccountIcon from '@material-ui/icons/AccountCircle'
 import Typography from '@material-ui/core/Typography';
-import { Drawer, List, ListItem, ListItemText, ListItemIcon } from '@material-ui/core';
+import { Drawer, List, ListItem, ListItemText, ListItemIcon, Divider } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     menuButton: {
@@ -56,7 +60,7 @@ function Nav() {
                 <IconButton onClick={toggleDrawer(true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
                     <MenuIcon/>
                 </IconButton>
-                <Typography variant="h6" className={classes.title}>
+                <Typography onClick={redirect("/home")} variant="h6" className={classes.title}>
                     {title}
                 </Typography>
                 </Toolbar>
@@ -71,6 +75,23 @@ function Nav() {
                             <ListItemText primary={text} />
                         </ListItem>
                     ))}
+                    <Divider></Divider>
+                    <ListItem button onClick={redirect("/mentorship")}>
+                        <ListItemIcon><PersonAddIcon /></ListItemIcon>
+                        <ListItemText>Mentorship</ListItemText>
+                    </ListItem>
+                    <ListItem>
+                        <ListItemIcon><AccountIcon /></ListItemIcon>
+                        <ListItemText>Profile</ListItemText>
+                    </ListItem>
+                    <ListItem button onClick={redirect("/yourschools")}>
+                        <ListItemIcon><SchoolIcon /></ListItemIcon>
+                        <ListItemText>Your Schools</ListItemText>
+                    </ListItem>
+                    <ListItem>
+                        <ListItemIcon><FlagIcon /></ListItemIcon>
+                        <ListItemText>Road to Admissions</ListItemText>
+                    </ListItem>
                 </List>
             </Drawer>
         </div>
